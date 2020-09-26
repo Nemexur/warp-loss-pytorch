@@ -35,8 +35,8 @@ class WARPAutograd(Function):
         # Transform rank into loss with weightening function (L)
         L = torch.zeros_like(target)
         # Positive labels and negative labels
-        positive_indices = target.float()
-        negative_indices = target.eq(0).float()
+        positive_indices = target.long()
+        negative_indices = target.eq(0).long()
         for i in range(batch_size):
             # Get indices of positives and negatives
             pos_target = positive_indices[i].nonzero().view(-1)
