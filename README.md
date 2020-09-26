@@ -21,3 +21,4 @@ loss.backward()
 
 1. Rewrite it without for loop and make it fully compatible with GPU parallelism seems to be pretty possible for Binary and MultiClass tasks so I would try it sometime.
 2. Implement current `WARPLoss` model on `CUDA C++` to efficiently work with for loop over batch size.
+3. Implement some kind of masking for operations with positives and negatives in `WARPLoss`. Maybe it would eliminate the need for custom backward and for loop over batch size.
