@@ -121,8 +121,7 @@ class WARPLoss(torch.nn.Module):
     * WSABIE: Scaling Up To Large Vocabulary Image Annotation
     * Deep Convolutional Ranking for Multilabel Image Annotation
 
-    WARPLoss inside passes input and target to CPU
-    to calculate loss and gradients as we use batch_size for loop.
+    WARPLoss inside passes input and target to CPU to calculate loss and gradients.
 
     Parameters
     ----------
