@@ -10,7 +10,8 @@ This implementation has only one for loop over batches as I wanted to make a sin
 from warp_loss import WARPLoss
 
 
-loss_func = WARPLoss()
+# Set max number of trials to 100
+loss_func = WARPLoss(max_num_trials=100)
 # Pass logits as inputs and target
 loss = loss_func(inputs, target)
 loss.backward()
