@@ -38,7 +38,7 @@ class WARPAutograd(Function):
         positive_indices = target.float()
         negative_indices = target.eq(0).float()
         for i in range(batch_size):
-            # Get positive elements
+            # Get indices of positives and negatives
             pos_target = positive_indices[i].nonzero().view(-1)
             neg_target = negative_indices[i].nonzero().view(-1)
             # Continue if everything is positive or no positives
